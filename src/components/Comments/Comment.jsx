@@ -66,6 +66,7 @@ const Comment = ({
   }, [replies]);
 
   const handleEditCommentary = async (newContent) => {
+    if(newContent.length <= 0) return;
     handleShowLoadingModal();
     setMessageLoading("Changing your comment...");
     try {
@@ -88,6 +89,7 @@ const Comment = ({
   };
 
   const handleEditReply = async (replyId, newContent) => {
+    if(newContent.length <= 0) return;
     handleShowLoadingModal();
     setMessageLoading("Changing your comment...");
     try {
@@ -113,6 +115,7 @@ const Comment = ({
   };
 
   const handleNewReply = async (replyContent, parentReplyId = null) => {
+    if(replyContent.length <= 0) return;
     handleShowLoadingModal();
     setMessageLoading("Creating new repply");
     try {
